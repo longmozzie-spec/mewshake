@@ -1,0 +1,258 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+  ============================================================
+  LÊ HẢI LONG — CREATIVE QUEST
+  Theme: "Hextech & Shadow" (Arcane-inspired)
+  Fonts: SVN-Determination (H1) · LanaPixel (H2/H3) · Zpix (body)
+  ============================================================
+*/
+
+:root {
+  --radius: 0px;
+
+  /* ---- Hextech & Shadow palette ---- */
+  --background: #0d0b14; /* shadow space — dark violet-black */
+  --foreground: #e2e6f0; /* moonlight silver — body text */
+
+  --card: #1a1525; /* dark violet panel */
+  --card-foreground: #e2e6f0;
+
+  --primary: #b14aed; /* magic violet — H1, borders, main glow */
+  --primary-foreground: #0d0b14;
+
+  --cyan: #00e5ff; /* energy cyan — H2/H3, links, hover */
+  --cyan-foreground: #03121a;
+
+  --secondary: #241a36; /* muted violet surface */
+  --secondary-foreground: #cdb8ff;
+
+  --accent: #ffc857; /* metallic gold — rare items / key CTAs */
+  --accent-foreground: #1a1300;
+
+  --destructive: #ff5d7a;
+
+  --muted: #181226;
+  --muted-foreground: #8b85a8; /* dim lavender */
+
+  --border: #392a55; /* violet border */
+  --input: #392a55;
+  --ring: #b14aed;
+
+  /* glow rgb channels (for box-shadow / text-shadow) */
+  --glow-primary: 177 74 237; /* #B14AED */
+  --glow-cyan: 0 229 255; /* #00E5FF */
+  --glow-gold: 255 200 87; /* #FFC857 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-cyan: var(--cyan);
+  --color-cyan-foreground: var(--cyan-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-vt), "Courier New", monospace; /* Zpix */
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* faint violet grid backdrop */
+  background-image:
+    linear-gradient(rgba(177, 74, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(177, 74, 237, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ---------- Font helpers ---------- */
+
+/* H2 / H3 sub-headings + UI labels — LanaPixel */
+.retro {
+  font-family: var(--font-pixel), monospace;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+/* H1 / big titles — SVN-Determination (epic, Vietnamese) */
+.title-vn {
+  font-family: var(--font-title), var(--font-pixel), monospace;
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+}
+
+/* Body copy — SVN-Coder's Crux (pixel coding font, full Vietnamese).
+   Unlike Zpix it stays crisp at any size, so we use a moderate, readable size. */
+.zbody {
+  font-family: var(--font-vt), "Courier New", monospace;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.zbody-sm {
+  font-family: var(--font-vt), "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Crisp pixel image rendering */
+.pixelated {
+  image-rendering: pixelated;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0b14;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border: 2px solid #0d0b14;
+}
+
+/* ---------- CRT scanline + vignette overlay ---------- */
+.crt-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+.crt-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 3px
+  );
+}
+.crt-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* purple-tinted vignette */
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(13, 11, 20, 0.7) 100%
+  );
+}
+
+@keyframes crt-flicker {
+  0% { opacity: 0.96; }
+  50% { opacity: 1; }
+  100% { opacity: 0.98; }
+}
+.crt-flicker {
+  animation: crt-flicker 0.18s infinite;
+}
+
+/* ---------- Neon glow text ---------- */
+.glow {
+  /* violet glow */
+  text-shadow:
+    0 0 5px rgba(var(--glow-primary) / 0.85),
+    0 0 16px rgba(var(--glow-primary) / 0.5);
+}
+.glow-cyan {
+  color: var(--cyan);
+  text-shadow:
+    0 0 5px rgba(var(--glow-cyan) / 0.85),
+    0 0 16px rgba(var(--glow-cyan) / 0.5);
+}
+.glow-amber {
+  color: var(--accent);
+  text-shadow:
+    0 0 5px rgba(var(--glow-gold) / 0.85),
+    0 0 16px rgba(var(--glow-gold) / 0.45);
+}
+
+/* ---------- Blink (cursor / PRESS START) ---------- */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+/* ---------- Pixel border box ---------- */
+.pixel-box {
+  position: relative;
+  background: var(--card);
+  box-shadow:
+    0 0 0 4px var(--background),
+    0 0 0 8px var(--primary),
+    0 0 24px rgba(var(--glow-primary) / 0.3);
+}
+
+/* ---------- Floating idle bob ---------- */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.bob {
+  animation: bob 2.4s ease-in-out infinite;
+}
+
+/* ---------- Screen entrance ---------- */
+@keyframes screen-in {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+.screen-in {
+  animation: screen-in 0.35s ease-out both;
+}
+
+/* ---------- Streak light (horizontal sweep) ---------- */
+@keyframes streak {
+  0% { transform: translateX(-120%); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+.streak {
+  animation: streak 6s ease-in-out infinite;
+}
+
+/* ---------- Marquee (footer ticker) ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee {
+  animation: marquee 18s linear infinite;
+  white-space: nowrap;
+}
