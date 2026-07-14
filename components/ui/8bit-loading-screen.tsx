@@ -7,9 +7,9 @@ import { Progress } from "@/components/ui/8bit-progress";
 
 const DEFAULT_TIPS = [
   "INSERT COIN TO CONTINUE...",
-  "Mẹo: Mỗi dự án là một màn chơi mới.",
-  "Đang nạp footage 4K...",
-  "Pro tip: Color grading là vũ khí tối thượng.",
+  "Tip: Every project is a new level.",
+  "Loading gaming gear data...",
+  "Pro tip: Always test before you buy.",
   "Loading creative assets...",
 ];
 

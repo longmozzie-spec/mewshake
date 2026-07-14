@@ -26,7 +26,7 @@ const codersCrux = localFont({
 export const metadata: Metadata = {
   title: "MEWSHAKE · Gear Quest",
   description:
-    "Portfolio của Mewshake — Gaming Gear Reviewer. Bấm START GAME để bắt đầu.",
+    "Mewshake — Gaming Gear Reviewer. Press START GAME to begin.",
   icons: {
     icon: "/cat-48.ico",
   },

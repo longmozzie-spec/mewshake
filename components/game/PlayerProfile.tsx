@@ -10,16 +10,16 @@ import { Progress } from "@/components/ui/8bit-progress";
 import VideoCard, { type VideoItem } from "@/components/game/VideoCard";
 
 const VIDEOS: VideoItem[] = [
-  { id: "7590056602204409108", title: "AULA S75 PRO - Thay thế hoàn hảo cho Aula F75?", tag: "REVIEW" },
+  { id: "7590056602204409108", title: "AULA S75 PRO - Perfect replacement for Aula F75?", tag: "REVIEW" },
   { id: "7655388770417659156", title: "Tanchjim Space Pro - Dual CS43198 DAC", tag: "REVIEW" },
-  { id: "7590812641682066708", title: "AULA F87 Pro V2 - Pre-build ổn, led sáng, 446k", tag: "REVIEW" },
-  { id: "7588527083517693204", title: "Leobog HI75C Pro - Kit nhôm 400k đáng chơi", tag: "UNBOX" },
+  { id: "7590812641682066708", title: "AULA F87 Pro V2 - Solid pre-build, bright LEDs", tag: "REVIEW" },
+  { id: "7588527083517693204", title: "Leobog HI75C Pro - Aluminum kit worth trying", tag: "UNBOX" },
   { id: "7632366516352142613", title: "WLMOUSE HUAN IEM - Most expensive peripheral", tag: "UNBOX" },
-  { id: "7589375966288366869", title: "Stab stock khá ngon, không lọc xọc", tag: "REVIEW" },
+  { id: "7589375966288366869", title: "Stock stabs surprisingly smooth, no rattle", tag: "REVIEW" },
   { id: "7657026606334053652", title: "SMSL Nano One - All-in-one desktop audio", tag: "REVIEW" },
   { id: "7659382976828067092", title: "DARKBEACON FLUX87 - Magnetic Switches", tag: "TECH" },
   { id: "7647585012522568980", title: "NICEHCK NK1 Max & GK KUNTEN - Best budget combo", tag: "TECH" },
-  { id: "7640172029785853204", title: "GK KUNTEN - Tai nghe tốt nhất phân khúc", tag: "REVIEW" },
+  { id: "7640172029785853204", title: "GK KUNTEN - Best IEM in its price range", tag: "REVIEW" },
 ];
 
 const SKILLS = [
