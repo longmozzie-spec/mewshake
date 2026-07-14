@@ -24,11 +24,11 @@ const codersCrux = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "LÊ HẢI LONG · Creative Quest",
+  title: "MEWSHAKE · Gear Quest",
   description:
-    "Portfolio 8-bit của Lê Hải Long — Video Editor & Creative tại CR Studio. Bấm START GAME để bắt đầu.",
+    "Portfolio của Mewshake — Gaming Gear Reviewer. Bấm START GAME để bắt đầu.",
   icons: {
-    icon: "/team-3.png",
+    icon: "/1772710591973.331.JPG",
   },
 };
 
@@ -42,7 +42,9 @@ export default function RootLayout({
       lang="vi"
       className={`${determination.variable} ${lanaPixel.variable} ${codersCrux.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        {children}
+      </body>
     </html>
   );
 }

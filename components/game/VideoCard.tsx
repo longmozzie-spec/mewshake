@@ -1,65 +1,47 @@
 "use client";
 
-import { useState } from "react";
-
 export interface VideoItem {
   id: string;
   title: string;
   tag: string;
 }
 
-/**
- * Pixel-framed YouTube card. Shows the thumbnail by default and swaps in a
- * muted autoplaying embed on hover (or tap on touch devices). Unmounting the
- * iframe on mouse-leave stops playback.
- */
 export default function VideoCard({ id, title, tag }: VideoItem) {
-  const [playing, setPlaying] = useState(false);
+  const videoUrl = `https://www.tiktok.com/@m3wshake/video/${id}`;
 
   return (
-    <div
-      className="group relative aspect-video overflow-hidden border-2 border-border bg-black transition-colors hover:border-primary"
-      onMouseEnter={() => setPlaying(true)}
-      onMouseLeave={() => setPlaying(false)}
-      onClick={() => setPlaying(true)}
+    <a
+      href={videoUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="group relative flex-shrink-0 w-[220px] overflow-hidden border-2 border-border bg-[#0a0e1a] transition-all hover:border-primary hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
     >
-      {playing ? (
-        <iframe
-          className="absolute inset-0 h-full w-full"
-          src={`https://www.youtube.com/embed/${id}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1&modestbranding=1`}
-          title={title}
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowFullScreen
+      <div className="aspect-[9/16] w-full overflow-hidden">
+        <img
+          src={`/thumbnails/${id}.jpg`}
+          alt={title}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
         />
-      ) : (
-        <>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
-            alt={title}
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-            loading="lazy"
-          />
-          {/* dark gradient for label legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
 
-          {/* play button */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="flex h-12 w-12 items-center justify-center border-2 border-primary bg-background/70 text-primary glow transition-transform group-hover:scale-110">
-              ▶
-            </div>
+        {/* Play overlay on hover */}
+        <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors group-hover:bg-black/30">
+          <div className="flex h-14 w-14 items-center justify-center border-2 border-primary bg-background/80 text-primary opacity-0 transition-opacity group-hover:opacity-100">
+            <span className="text-xl">▶</span>
           </div>
+        </div>
 
-          {/* labels */}
-          <span className="retro glow-cyan absolute left-2 top-2 bg-background/70 px-1.5 py-0.5 text-[7px]">
-            {tag}
-          </span>
-          <span className="retro absolute bottom-2 left-2 right-2 text-[8px] leading-relaxed text-foreground">
+        {/* Bottom gradient for title */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 pt-8">
+          <p className="retro text-[7px] leading-relaxed text-foreground line-clamp-2">
             {title}
-          </span>
-        </>
-      )}
-    </div>
+          </p>
+        </div>
+      </div>
+
+      <span className="retro glow-cyan absolute left-2 top-2 z-10 bg-background/70 px-1.5 py-0.5 text-[7px]">
+        {tag}
+      </span>
+    </a>
   );
 }

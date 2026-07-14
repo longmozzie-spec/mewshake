@@ -19,21 +19,21 @@ export default function StartScreen({ onStart }: { onStart: () => void }) {
       <div className="retro flex w-full max-w-2xl justify-between text-[8px] text-muted-foreground md:text-[10px]">
         <span>1UP</span>
         <span className="glow text-primary">HI-SCORE 999999</span>
-        <span>©2026 CR</span>
+        <span>©2026 MEWSHAKE</span>
       </div>
 
       {/* Title */}
       <div className="bob space-y-4">
         <p className="retro glow-cyan text-[10px] md:text-xs">
-          CREATIVE QUEST
+          GEAR QUEST
         </p>
         <h1 className="title-vn glow text-5xl leading-[0.95] text-primary sm:text-7xl md:text-8xl">
-          LÊ HẢI
+          MEW
           <br />
-          LONG
+          SHAKE
         </h1>
         <p className="retro text-[8px] text-muted-foreground md:text-[10px]">
-          VIDEO EDITOR &middot; CREATIVE &middot; CR STUDIO
+          GAMING GEAR REVIEWER &middot; TECH &middot; @M3WSHAKE
         </p>
       </div>
 
@@ -49,7 +49,7 @@ export default function StartScreen({ onStart }: { onStart: () => void }) {
 
       {/* Footer credits */}
       <p className="retro text-[7px] text-muted-foreground md:text-[8px]">
-        © 2026 <span className="title-vn text-[10px] md:text-xs">LÊ HẢI LONG</span> — ALL RIGHTS RESERVED
+        © 2026 <span className="title-vn text-[10px] md:text-xs">MEWSHAKE</span> — ALL RIGHTS RESERVED
       </p>
     </div>
   );

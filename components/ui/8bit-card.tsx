@@ -13,7 +13,7 @@ export function Card({
       className={cn(
         "relative bg-card text-card-foreground p-1",
         // pixel border via layered box-shadow
-        "shadow-[0_0_0_4px_var(--background),0_0_0_8px_var(--primary),0_0_24px_rgba(177,74,237,0.28)]",
+        "shadow-[0_0_0_4px_var(--background),0_0_0_8px_var(--border),0_0_24px_rgba(59,130,246,0.28)]",
         className
       )}
       {...props}

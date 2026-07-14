@@ -3,7 +3,7 @@
 
 /*
   ============================================================
-  LÊ HẢI LONG — CREATIVE QUEST
+  MEWSHAKE — GEAR QUEST
   Theme: "Hextech & Shadow" (Arcane-inspired)
   Fonts: SVN-Determination (H1) · LanaPixel (H2/H3) · Zpix (body)
   ============================================================
@@ -12,38 +12,38 @@
 :root {
   --radius: 0px;
 
-  /* ---- Hextech & Shadow palette ---- */
-  --background: #0d0b14; /* shadow space — dark violet-black */
-  --foreground: #e2e6f0; /* moonlight silver — body text */
+  /* ---- Neon Blue & Shadow palette ---- */
+  --background: #0a0e1a; /* deep space blue-black */
+  --foreground: #e2e8f0; /* silver — body text */
 
-  --card: #1a1525; /* dark violet panel */
-  --card-foreground: #e2e6f0;
+  --card: #111827; /* dark navy panel */
+  --card-foreground: #e2e8f0;
 
-  --primary: #b14aed; /* magic violet — H1, borders, main glow */
-  --primary-foreground: #0d0b14;
+  --primary: #FFB800; /* golden yellow — H1, borders, main glow */
+  --primary-foreground: #0a0e1a;
 
-  --cyan: #00e5ff; /* energy cyan — H2/H3, links, hover */
+  --cyan: #22d3ee; /* energy cyan — H2/H3, links, hover */
   --cyan-foreground: #03121a;
 
-  --secondary: #241a36; /* muted violet surface */
-  --secondary-foreground: #cdb8ff;
+  --secondary: #1e293b; /* muted navy surface */
+  --secondary-foreground: #93c5fd;
 
-  --accent: #ffc857; /* metallic gold — rare items / key CTAs */
+  --accent: #fbbf24; /* gold — rare items / key CTAs */
   --accent-foreground: #1a1300;
 
   --destructive: #ff5d7a;
 
-  --muted: #181226;
-  --muted-foreground: #8b85a8; /* dim lavender */
+  --muted: #0f172a;
+  --muted-foreground: #64748b; /* slate gray */
 
-  --border: #392a55; /* violet border */
-  --input: #392a55;
-  --ring: #b14aed;
+  --border: #1e3a5f; /* blue border */
+  --input: #1e3a5f;
+  --ring: #3b82f6;
 
   /* glow rgb channels (for box-shadow / text-shadow) */
-  --glow-primary: 177 74 237; /* #B14AED */
-  --glow-cyan: 0 229 255; /* #00E5FF */
-  --glow-gold: 255 200 87; /* #FFC857 */
+  --glow-primary: 255 184 0; /* #FFB800 — text glow */
+  --glow-cyan: 34 211 238; /* #22D3EE */
+  --glow-gold: 251 191 36; /* #FBBF24 */
 }
 
 @theme inline {
@@ -87,8 +87,8 @@ body {
   overflow-x: hidden;
   /* faint violet grid backdrop */
   background-image:
-    linear-gradient(rgba(177, 74, 237, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(177, 74, 237, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
@@ -133,11 +133,11 @@ body {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d0b14;
+  background: #0a0e1a;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
-  border: 2px solid #0d0b14;
+  border: 2px solid #0a0e1a;
 }
 
 /* ---------- CRT scanline + vignette overlay ---------- */
@@ -167,7 +167,7 @@ body {
   background: radial-gradient(
     ellipse at center,
     transparent 50%,
-    rgba(13, 11, 20, 0.7) 100%
+    rgba(10, 14, 26, 0.7) 100%
   );
 }
 
@@ -255,4 +255,17 @@ body {
 .marquee {
   animation: marquee 18s linear infinite;
   white-space: nowrap;
+}
+
+/* ---------- Video carousel (right-to-left continuous scroll) ---------- */
+@keyframes video-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.video-carousel {
+  animation: video-scroll 40s linear infinite;
+  width: max-content;
+}
+.video-carousel:hover {
+  animation-play-state: paused;
 }

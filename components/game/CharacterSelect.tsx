@@ -37,19 +37,19 @@ export default function CharacterSelect({
         {/* Locked slot */}
         <LockedSlot label="???" />
 
-        {/* Main character — Lê Hải Long */}
+        {/* Main character — Mewshake */}
         <div className="order-first mx-auto w-full max-w-[260px] md:order-none md:max-w-none">
-          <div className="relative bg-card p-2 shadow-[0_0_0_4px_var(--background),0_0_0_8px_var(--primary),0_0_30px_rgba(177,74,237,0.4)]">
+          <div className="relative bg-card p-2 shadow-[0_0_0_4px_var(--background),0_0_0_8px_var(--border),0_0_30px_rgba(59,130,246,0.4)]">
             {/* P1 tag */}
             <div className="retro absolute -top-3 left-1/2 -translate-x-1/2 bg-accent px-3 py-1 text-[8px] text-accent-foreground">
               PLAYER 1
             </div>
 
             {/* Avatar video — living portrait */}
-            <div className="relative mx-auto mt-3 aspect-[3/4] w-full overflow-hidden border-2 border-primary/50 bg-[#0d0b14]">
+            <div className="relative mx-auto mt-3 aspect-[3/4] w-full overflow-hidden border-2 border-primary/50 bg-[#0a0e1a]">
               <video
                 src="/video-select.mp4"
-                poster="/team-3.png"
+                poster="/1772710591973.331.JPG"
                 autoPlay
                 loop
                 muted
@@ -58,19 +58,19 @@ export default function CharacterSelect({
                 className="absolute inset-0 h-full w-full object-cover object-top"
               />
               {/* scan tint */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0d0b14] via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a0e1a] via-transparent to-transparent" />
             </div>
 
             {/* Name plate */}
             <div className="mt-3 space-y-2 px-1 pb-2 text-center">
-              <p className="title-vn glow text-3xl text-primary">LÊ HẢI LONG</p>
-              <p className="retro glow-cyan text-[8px]">CLASS: VIDEO EDITOR</p>
+              <p className="title-vn glow text-3xl text-primary">MEWSHAKE</p>
+              <p className="retro glow-cyan text-[8px]">CLASS: GEAR REVIEWER</p>
 
               <div className="mx-auto mt-3 max-w-[200px] space-y-1 text-left">
-                <StatRow label="EDIT" count={5} />
-                <StatRow label="MOTION" count={4} />
-                <StatRow label="COLOR" count={5} />
-                <StatRow label="SOUND" count={3} />
+                <StatRow label="REVIEW" count={5} />
+                <StatRow label="UNBOX" count={4} />
+                <StatRow label="TESTING" count={5} />
+                <StatRow label="CONTENT" count={4} />
               </div>
             </div>
           </div>

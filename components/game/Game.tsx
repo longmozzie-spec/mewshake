@@ -18,7 +18,7 @@ export default function Game() {
     <div className="relative min-h-screen w-full overflow-x-hidden">
       {/* Animated synthwave grid background (Hextech violet) */}
       <RetroGrid
-        gridColor="#b14aed"
+        gridColor="#3b82f6"
         showScanlines={false}
         className="fixed inset-0 z-0 h-full w-full"
       />
