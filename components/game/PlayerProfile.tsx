@@ -64,24 +64,25 @@ const WORKS = [
   },
 ];
 
-const AFFILIATES = [
-  { name: "ATK STORE", desc: "Gaming peripherals & accessories", href: "https://www.atk.store/?ref=mewshake" },
-  { name: "DARKBEACON", desc: "Magnetic switch keyboards", href: "https://darkbeacon.ai/?utm_source=m3wshake&utm_medium=influencer&utm_campaign=kol&utm_content=all" },
-  { name: "WLMOUSE", desc: "Premium gaming mice", href: "https://www.wlmouse.com/?ref=mewshake" },
-  { name: "FOSI AUDIO", desc: "Hi-Fi amplifiers & DACs", href: "https://fosiaudio.com/?ref=zihquorw&utm_campaign=goaffpro&utm_medium=referral&utm_source=affiliate" },
-  { name: "QMTECH", desc: "Gaming gear Vietnam", href: "https://qmtech.vn/" },
-  { name: "ANGRY MIAO", desc: "AM Infinity 97 wireless mouse", href: "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse" },
-  { name: "TANCHJIM", desc: "Space Pro portable DAC", href: "https://tanchjim.com/en/products/dac/space-pro/" },
-  { name: "SMSL AUDIO", desc: "Desktop DAC & amplifiers", href: "https://www.smsl-audio.com/portal/product/detail/id/939.html" },
-  { name: "PHONG CÁCH XANH", desc: "RAWM Leviathan V4", href: "https://www.phongcachxanh.vn/products/rawm-leviathan-v4" },
-  { name: "FIFINE", desc: "AmpliGame audio mixer bundle", href: "https://fifinemicrophone.com/collections/audio-mixers/products/fifine-ampligame-recording-bundle-sc3-audio-mixer-xlr-cable" },
-  { name: "SHOPEE", desc: "Deals on Shopee", href: "https://shopee.vn/product/16409457/27294799186?credential_token=8wEwiDL7YDzC5t8SfPgBNa24HDyQMk5TNtzxt8zy1G&exp_group=rollout&gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAMibXrIYUaXM17apnZ7ndhtLKKELDCCl5CbrdZQjH4dydtQOHqLGHYqdRY8fHy9FBlOJIj9MsgqZWzglz7qmNpcGhlcnRleHTEkQAAAAw9h-tM5HFKuBqLNXBp2KMcn8Z2gmDqzZ-d5N_LWDZyoBoMccxeahgEqzbTtUe69sEKbENhtVZKWEXfdrfmsS6dxKLgaYs9GT7WliON4WgsUKXyp-fo27Hpm6-TL4kmat5J2rqaGJNkzC1_IbJL0O1QM6Nx_-CtpL-e_hVJndApf230KgfptoVqqFci_dk&mmp_pid=an_17346360391&uls_trackid=564seihh052u" },
+const REVIEWED_PRODUCTS = [
+  { name: "ATK Gear", desc: "Use code \"MEWSHAKE\" for 10% discount.", tag: "PERIPHERALS", href: "https://www.atk.store/?ref=mewshake", image: null },
+  { name: "WLmouse", desc: "Use code \"MEWSHAKE\" for 2% discount.", tag: "MOUSE", href: "https://www.wlmouse.com/?ref=mewshake", image: null },
+  { name: "Fosi Audio", desc: "Use code \"MEWSHAKE\" for 10% discount.", tag: "AUDIO", href: "https://fosiaudio.com/?ref=zihquorw&utm_campaign=goaffpro&utm_medium=referral&utm_source=affiliate", image: null },
+  { name: "DarkBeacon", desc: "Use code \"M3WSHAKE10\" for 10% discount.", tag: "KEYBOARD", href: "https://darkbeacon.ai/?utm_source=m3wshake&utm_medium=influencer&utm_campaign=kol&utm_content=all", image: null },
+  { name: "QMTECH STORE", desc: "(Local vendor) TikTok Shop, Shopee.", tag: "PERIPHERALS", href: "https://qmtech.vn/", image: null },
+  { name: "AM Infinity .97", desc: "World's lightest hollow-out metal gaming mouse with infinite battery life.", tag: "MOUSE", href: "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse", image: "/product/AM INFINITY MOUSE .97.webp" },
+  { name: "Tanchjim Space Pro", desc: "Dual CS43198 portable DAC/AMP. Available at NCSTORE, SLAUDIO.", tag: "AUDIO", href: "https://tanchjim.com/en/products/dac/space-pro/", image: "/product/SPACE PRO.jpg" },
+  { name: "SMSL Nano One", desc: "Game headset-optimized external sound card.", tag: "AUDIO", href: "https://www.smsl-audio.com/portal/product/detail/id/939.html", image: "/product/Nano One.jpg" },
+  { name: "RAWM Leviathan V4", desc: "MCU: Chip Nordic nRF54L15 x RAWMSPEED 2.0.", tag: "MOUSE", href: "https://www.phongcachxanh.vn/products/rawm-leviathan-v4", image: "/product/RAWM Leviathan V4.webp" },
+  { name: "FIFINE SC3", desc: "AmpliGame audio mixer + XLR cable bundle.", tag: "AUDIO", href: "https://fifinemicrophone.com/collections/audio-mixers/products/fifine-ampligame-recording-bundle-sc3-audio-mixer-xlr-cable", image: "/product/FIFINE Recording and Gaming Bundle SC3 Audio Mixer XLR Cable.webp" },
+  { name: "PSYCHE Gear Speed", desc: "PSYCHE Gear MID-01 Yeku special edition.", tag: "MOUSE", href: "https://shopee.vn/product/16409457/27294799186?credential_token=8wEwiDL7YDzC5t8SfPgBNa24HDyQMk9uTw4sdyUn3z&exp_group=rollout&gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAM_NxfHGgeczprZR4Q8tPoOfvwhbtN63JlB369xGJA1mbqBWuW2sVWxQjSJT_xT_mbG0_W5kumedB_GGTjqmNpcGhlcnRleHTEkQAAAAzsrGc_oVnqNsels6GQG6FROn1rdIddxlk_QlDsxZsFQZKgue_xI5RWCQyycywg3LSMcWUAFEkp0WB6xJE-x-sTvpSLsHNnaH8Dqn3x2RsXejplXaC7Cy7IOwVMLKbnhG_VRL3_hRDvcTw7cMwxnem7Om14uiA0fgPtIbOBXE7Y4XQwbrNrJzWsazETvjE&mmp_pid=an_17346360391&uls_trackid=564smjc001tk", image: "/product/PSYCHE Gear Speed MID-01 Yeku.webp" },
+  { name: "Gaming Control PsyChe", desc: "PsyChe Gear Zero Speed gaming controller.", tag: "CONTROLLER", href: "https://shopee.vn/product/16409457/56261743565?credential_token=8wEwiDL7ZRuiMCVD9rJ4BmJfARxyGAFCyDUTzTaymh&exp_group=rollout&gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAM_NxfHGgeczprZR4Q8tPoOfvwhbtN63JlB369xGJA1mbqBWuW2sVWxQjSJT_xT_mbG0_W5kumedB_GGTjqmNpcGhlcnRleHTEkQAAAAzkJF2dQnXCN09xpGcZMqB4XC78k2fxW4nFHpy7x_f-tjzws6Gp1R3plq1b72Ea_8csRb-mniQD9SAHwyQimloL961uvrQprsjBcf00znp2sRf10NGGJ_ji90si2wokQeBj8FFV2SkTKeq4AJ72iNXIuDSMp_hJyM4qcFePPsqAlXPYc7FCpVpURKMPcN8&mmp_pid=an_17346360391&uls_trackid=564smjef00so", image: "/product/Gaming Control PsyChe Gear- Zero Speed.webp" },
 ];
 
 const NAV = [
   { id: "profile", label: "PROFILE" },
   { id: "works", label: "WORKS" },
-  { id: "shop", label: "SHOP" },
+  { id: "reviewed", label: "REVIEWED" },
   { id: "contact", label: "CONTACT" },
 ];
 
@@ -264,32 +265,55 @@ export default function PlayerProfile({ onExit }: { onExit: () => void }) {
           </div>
         </section>
 
-        {/* ================= SHOP / AFFILIATE ================= */}
-        <section id="shop" className="scroll-mt-24">
-          <SectionTitle>SHOP · AFFILIATE</SectionTitle>
+        {/* ================= REVIEWED PRODUCTS ================= */}
+        <section id="reviewed" className="scroll-mt-24">
+          <SectionTitle>REVIEWED · PRODUCTS</SectionTitle>
           <p className="retro glow-cyan mb-6 text-center text-[10px]">
-            ★ USE MY LINKS TO SUPPORT THE CHANNEL ★
+            ★ PRODUCTS I HAVE TESTED & REVIEWED ★
           </p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {AFFILIATES.map((a) => (
-              <a
-                key={a.name}
-                href={a.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group flex flex-col gap-2 border-2 border-border bg-card p-4 transition-all hover:-translate-y-1 hover:border-primary hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
-              >
-                <span className="retro glow text-xs text-primary group-hover:text-cyan">
-                  {a.name}
-                </span>
-                <span className="zbody text-[11px] text-muted-foreground">
-                  {a.desc}
-                </span>
-                <span className="retro mt-auto text-[8px] text-accent glow-amber">
-                  ▶ VISIT STORE
-                </span>
-              </a>
-            ))}
+          <div className="mx-auto flex max-w-2xl flex-col gap-4">
+            {REVIEWED_PRODUCTS.map((a) =>
+              a.image ? (
+                <a
+                  key={a.name}
+                  href={a.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group grid grid-cols-[140px_1fr] overflow-hidden border-2 border-border bg-card/80 transition-all hover:border-primary hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                >
+                  <div className="relative h-full min-h-[120px] bg-[#1a1a2e]">
+                    <Image src={a.image} alt={a.name} fill sizes="140px" className="object-contain p-2" />
+                  </div>
+                  <div className="flex flex-col justify-center gap-1 p-4">
+                    <span className="retro glow text-xs text-primary group-hover:text-cyan">
+                      {a.name}
+                    </span>
+                    <span className="zbody text-[10px] text-muted-foreground">
+                      {a.desc}
+                    </span>
+                    <span className="retro mt-1 text-[7px] text-accent glow-amber">[{a.tag}]</span>
+                  </div>
+                </a>
+              ) : (
+                <a
+                  key={a.name}
+                  href={a.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center gap-4 rounded-full border-2 border-border bg-card/80 px-5 py-3 transition-all hover:border-primary hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                >
+                  <span className="retro text-[8px] text-accent glow-amber">[{a.tag}]</span>
+                  <div className="flex flex-col">
+                    <span className="retro glow text-xs text-primary group-hover:text-cyan">
+                      {a.name}
+                    </span>
+                    <span className="zbody text-[10px] text-muted-foreground">
+                      {a.desc}
+                    </span>
+                  </div>
+                </a>
+              )
+            )}
           </div>
         </section>
 
