@@ -64,9 +64,24 @@ const WORKS = [
   },
 ];
 
+const AFFILIATES = [
+  { name: "ATK STORE", desc: "Gaming peripherals & accessories", href: "https://www.atk.store/?ref=mewshake" },
+  { name: "DARKBEACON", desc: "Magnetic switch keyboards", href: "https://darkbeacon.ai/?utm_source=m3wshake&utm_medium=influencer&utm_campaign=kol&utm_content=all" },
+  { name: "WLMOUSE", desc: "Premium gaming mice", href: "https://www.wlmouse.com/?ref=mewshake" },
+  { name: "FOSI AUDIO", desc: "Hi-Fi amplifiers & DACs", href: "https://fosiaudio.com/?ref=zihquorw&utm_campaign=goaffpro&utm_medium=referral&utm_source=affiliate" },
+  { name: "QMTECH", desc: "Gaming gear Vietnam", href: "https://qmtech.vn/" },
+  { name: "ANGRY MIAO", desc: "AM Infinity 97 wireless mouse", href: "https://store.angrymiao.com/products/am-infinity-97-wireless-gaming-mouse" },
+  { name: "TANCHJIM", desc: "Space Pro portable DAC", href: "https://tanchjim.com/en/products/dac/space-pro/" },
+  { name: "SMSL AUDIO", desc: "Desktop DAC & amplifiers", href: "https://www.smsl-audio.com/portal/product/detail/id/939.html" },
+  { name: "PHONG CÁCH XANH", desc: "RAWM Leviathan V4", href: "https://www.phongcachxanh.vn/products/rawm-leviathan-v4" },
+  { name: "FIFINE", desc: "AmpliGame audio mixer bundle", href: "https://fifinemicrophone.com/collections/audio-mixers/products/fifine-ampligame-recording-bundle-sc3-audio-mixer-xlr-cable" },
+  { name: "SHOPEE", desc: "Deals on Shopee", href: "https://shopee.vn/product/16409457/27294799186?credential_token=8wEwiDL7YDzC5t8SfPgBNa24HDyQMk5TNtzxt8zy1G&exp_group=rollout&gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAMibXrIYUaXM17apnZ7ndhtLKKELDCCl5CbrdZQjH4dydtQOHqLGHYqdRY8fHy9FBlOJIj9MsgqZWzglz7qmNpcGhlcnRleHTEkQAAAAw9h-tM5HFKuBqLNXBp2KMcn8Z2gmDqzZ-d5N_LWDZyoBoMccxeahgEqzbTtUe69sEKbENhtVZKWEXfdrfmsS6dxKLgaYs9GT7WliON4WgsUKXyp-fo27Hpm6-TL4kmat5J2rqaGJNkzC1_IbJL0O1QM6Nx_-CtpL-e_hVJndApf230KgfptoVqqFci_dk&mmp_pid=an_17346360391&uls_trackid=564seihh052u" },
+];
+
 const NAV = [
   { id: "profile", label: "PROFILE" },
   { id: "works", label: "WORKS" },
+  { id: "shop", label: "SHOP" },
   { id: "contact", label: "CONTACT" },
 ];
 
@@ -245,6 +260,35 @@ export default function PlayerProfile({ onExit }: { onExit: () => void }) {
                 </h3>
                 <p className="zbody text-foreground/80">{w.desc}</p>
               </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* ================= SHOP / AFFILIATE ================= */}
+        <section id="shop" className="scroll-mt-24">
+          <SectionTitle>SHOP · AFFILIATE</SectionTitle>
+          <p className="retro glow-cyan mb-6 text-center text-[10px]">
+            ★ USE MY LINKS TO SUPPORT THE CHANNEL ★
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {AFFILIATES.map((a) => (
+              <a
+                key={a.name}
+                href={a.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex flex-col gap-2 border-2 border-border bg-card p-4 transition-all hover:-translate-y-1 hover:border-primary hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+              >
+                <span className="retro glow text-xs text-primary group-hover:text-cyan">
+                  {a.name}
+                </span>
+                <span className="zbody text-[11px] text-muted-foreground">
+                  {a.desc}
+                </span>
+                <span className="retro mt-auto text-[8px] text-accent glow-amber">
+                  ▶ VISIT STORE
+                </span>
+              </a>
             ))}
           </div>
         </section>
