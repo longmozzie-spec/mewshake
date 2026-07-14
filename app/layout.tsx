@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio của Mewshake — Gaming Gear Reviewer. Bấm START GAME để bắt đầu.",
   icons: {
-    icon: "/1772710591973.331.JPG",
+    icon: "/cat-48.ico",
   },
 };
 
