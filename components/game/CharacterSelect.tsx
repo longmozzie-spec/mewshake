@@ -48,7 +48,7 @@ export default function CharacterSelect({
             {/* Avatar video — living portrait */}
             <div className="relative mx-auto mt-3 aspect-[3/4] w-full overflow-hidden border-2 border-primary/50 bg-[#0a0e1a]">
               <video
-                src="/video/7590056602204409108.mp4"
+                src="/MEWSHAKE VIDEO.mp4"
                 poster="/1772710591973.331.JPG"
                 autoPlay
                 loop
