@@ -49,7 +49,7 @@ export default function CharacterSelect({
             <div className="relative mx-auto mt-3 aspect-[3/4] w-full overflow-hidden border-2 border-primary/50 bg-[#0a0e1a]">
               <video
                 src="/MEWSHAKE VIDEO.mp4"
-                poster="/1772710591973.331.JPG"
+                poster="/f2bdf27c-66c6-4a0e-b969-9b2483511352.png"
                 autoPlay
                 loop
                 muted
