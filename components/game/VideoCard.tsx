@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export interface VideoItem {
   id: string;
@@ -10,7 +10,27 @@ export interface VideoItem {
 
 export default function VideoCard({ id, title, tag }: VideoItem) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const video = videoRef.current;
+    if (!container || !video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -22,6 +42,7 @@ export default function VideoCard({ id, title, tag }: VideoItem) {
 
   return (
     <div
+      ref={containerRef}
       onClick={handleClick}
       className="group relative flex-shrink-0 w-[220px] cursor-pointer overflow-hidden border-2 border-border bg-[#0a0e1a] transition-all hover:border-primary hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
     >
@@ -29,10 +50,10 @@ export default function VideoCard({ id, title, tag }: VideoItem) {
         <video
           ref={videoRef}
           src={`/video/${id}.mp4`}
-          autoPlay
           loop
           muted
           playsInline
+          preload="none"
           className="h-full w-full object-cover"
         />
       </div>
